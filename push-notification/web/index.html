@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<div id="main">
+  registering<br />
+  <small>
+    If nothing appears, check the log for errors. This will probably fail if
+    you are in private mode for example, or you might have to unregister an old
+    service worker.
+  </small>
+</div>
+<script id="controls" type="text/html">
+  <button onclick="register()">register</button><br />
+  <textarea id="info" readonly></textarea><br />
+</script>
+<script>
+
+navigator.serviceWorker.register("/service-worker.js");
+
+// thanks https://developer.mozilla.org/en-US/docs/Web/API/PushManager/getSubscription
+navigator.serviceWorker.ready.then(async function(registration) {
+  document.getElementById('main').innerHTML = document.getElementById('controls').innerHTML;
+  // just made a global variable in this example
+  window.registration = registration;
+});
+
+async function register() {
+  const subscription = await window.registration.pushManager.subscribe({
+    userVisibleOnly: true,
+//    applicationServerKey: key, // this is usually here - search for 'vapid'
+  });
+  document.getElementById('info').value = subscription.endpoint;
+}
+
+</script>

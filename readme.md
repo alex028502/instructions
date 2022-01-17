@@ -1,9 +1,13 @@
 # Instructions
 
-I created this repo because I needed somewhere to put
-[these instructions](./gdb-arduino-sketch) for using gdb with the arduino
-platform with and STM32. They are mainly for me in the future but if they help
-anybody else, that's great too.
+I had two sets of instructions I wanted to write down for later, and figured it
+might be just as easy to do it somewhere public, in case somebody else could use
+them too, and to make it easier to find them when I need them.
 
-I structured the repo this way just in case I ever have another set of notes
-I want to commit to memory.
+It turned out it wasn't "just as easy", but that's OK.
+
+[these instructions](./gdb-arduino-sketch) are for using gdb with the arduino
+platform and STM32.
+
+[these instructions](./push-notification) are for sending yourself a test push
+notification (to see how they work) with just `curl`.
