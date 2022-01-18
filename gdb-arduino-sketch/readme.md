@@ -185,6 +185,13 @@ The template has some `[]` after `board manager:`, so I removed that and used
 this hyphen format instead. If you already have a board in there, just add
 another line with another hyphen.
 
+go like this whenever you add a new entry:
+(or whenever you feel like it)
+
+```
+arduino-cli core update-index
+```
+
 Now install the stm32 'core' like this:
 
 ```
